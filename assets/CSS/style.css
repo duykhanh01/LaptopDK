@@ -299,6 +299,8 @@
     overflow: hidden;
 }
 
+
+
 .slides-show{
     width: 100%;
     height: 554px;
@@ -316,9 +318,11 @@
     
 }
 
+
 .slides-show .slides-visible{
     opacity: 1 ;
     visibility: visible;
+    transition: 0.5s;
 }
 
 .slides-img a img{
@@ -328,57 +332,64 @@
 }
 
 .slides-button{
-    color: #fff;
     z-index: 5;
     font-size: 60px;
-    opacity: 0.5;
 }
 
-.slides-nav{
+/* button next, prev */
+.btn-slides{
+    display: block;
+    position: absolute;
+    top: 41%;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    border: none;
+    outline: none;
+    opacity: 0.6;
     cursor: pointer;
+    line-height:100px;
     z-index: 10;
 }
 
-.slides-button #button-right{
-    display: block;
-    position: absolute;
-    top: 44%;
+.slides-button #button-next{
     right: 10px;
 }
 
-.slides-button #button-left{
-    display: block;
-    position: absolute;
-    top: 44%;
+.slides-button #button-prev{
     left: 10px;
 }
 
-#button-right:hover,
-#button-left:hover{
-    color: #6980DD;
+.slides:hover .slides-button{
+    display: block;
+}
+
+#button-next:hover,
+#button-prev:hover{
+    color: #fff;
+    opacity: 0.8;
 }
 
 .move-out-left{
-    animation: move-out-left 0.25s forwards;
+    animation: move-out-left   0.5s forwards;
     
 }
 .move-into-left{
-    animation: move-into-left 0.25s forwards;
+    animation: move-into-left  0.5s forwards;
 }
 
 .move-out-right{
-    animation: move-out-right 0.25s forwards;
+    animation: move-out-right  0.5s forwards;
 }
 
 .move-into-right{
-    animation: move-into-right 0.25s forwards;
+    animation: move-into-right 0.5s forwards;
 }
 
-.slides-list{
+.slides-location{
     position: absolute;
     z-index: 11;
     width: 100px;
-    bottom:10%;
+    bottom:5%;
     left:50%;
     transform: translateX(-50%);
     display:flex;
@@ -386,13 +397,18 @@
     
 }
 
-.slides-list li{
+.slides-location li{
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background-color: #fff;
-    opacity: 0.6 ;
-    
+    opacity: 0.5 ;
+    transition: 0.5s;
+}
+
+.slides-location li.location-active{
+    background-color: #EC1C24;
+    opacity: 0.8;
 }
 
 /* animation slides */
