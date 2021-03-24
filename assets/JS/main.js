@@ -29,7 +29,7 @@ $(document).ready(function () {
 
   /* button chuyển slide tiếp theo */
    $('#button-next').click(function (event) {
-      resetTimer()
+      resetTimer();
       var slideNext = $('.slides-visible').next();
       var positionNext = slideNext.attr('number');
       var location = $('.location-active').index()+1;
@@ -47,9 +47,9 @@ $(document).ready(function () {
          slideNext.addClass('slides-visible').addClass('move-into-left').one('animationend', function (event) {
             $('.move-into-left').removeClass('move-into-left');
          });
-         // xử lý nút location của slide
-         $('.slides-location li').removeClass('location-active');
-         $('.slides-location li:nth-child('+(location+1)+')').addClass('location-active');
+         // xử lý nút location của slide  
+         $('.slides-location button').removeClass('location-active');
+         $('.slides-location button:nth-child('+(location+1)+')').addClass('location-active');
       }
       else{
          $('.slides-visible').addClass('move-out-left').one('animationend', function (event) {
@@ -60,8 +60,8 @@ $(document).ready(function () {
             $('.move-into-left').removeClass('move-into-left');
       });
       // xử lý nút location của slide
-      $('.slides-location li').removeClass('location-active');
-      $('.slides-location li:first-child').addClass('location-active');
+      $('.slides-location button').removeClass('location-active');
+      $('.slides-location button:first-child').addClass('location-active');
       }
    });
 
@@ -92,8 +92,8 @@ $(document).ready(function () {
          });
 
          // xử lý nút location của slide
-         $('.slides-location li').removeClass('location-active');
-         $('.slides-location li:nth-child('+(location-1)+')').addClass('location-active');
+         $('.slides-location button').removeClass('location-active');
+         $('.slides-location button:nth-child('+(location-1)+')').addClass('location-active');
 
       } else {
          $('.slides-visible').addClass('move-out-right').one('animationend', function (event) {
@@ -103,11 +103,42 @@ $(document).ready(function () {
          $('.slides-img:last-child').addClass('slides-visible').addClass('move-into-right').one('animationend', function (event) {
             $('.move-into-right').removeClass('move-into-right');
          });
-         $('.slides-location li').removeClass('location-active');
-         $('.slides-location li:last-child').addClass('location-active');
+         $('.slides-location button').removeClass('location-active');
+         $('.slides-location button:last-child').addClass('location-active');
       }
+   });
 
-      
+   // nút location
+
+   $('.slides-location button').click(function (e) { 
+      resetTimer();
+      afterClick('.slides-location button');
+      var location = $('.location-active').index()+1;
+      var locationClick = $(this).index()+1; // nút hiện tại
+      $('.slides-location button').removeClass('location-active');
+      $(this).addClass('location-active');
+      // nếu vị trí click location lớn hơn vị trí của ảnh hiện tại thì sẽ đi theo chiều của button next
+      if(locationClick>location){   
+         $('.slides-visible').addClass('move-out-left').one('animationend', function (event) {
+            $('.slides-location button').removeAttr('disabled');
+            $('.move-out-left').removeClass('move-out-left').removeClass('slides-visible');
+         });
+         // ảnh có vị trí == vị trí của location đã click sẽ di chuyển từ bên trái vào bên phải
+         $('.slides-img:nth-child('+(locationClick)+')').addClass('slides-visible').addClass('move-into-left').one('animationend', function (event) {
+            $('.move-into-left').removeClass('move-into-left');
+         });
+      }
+      // nếu vị trí click location nhỏ hơn vị trí của ảnh hiện tại thì sẽ đi theo chiều của button prev
+      if(locationClick<location){
+         $('.slides-visible').addClass('move-out-right').one('animationend', function (event) {
+            $('.slides-location button').removeAttr('disabled');
+            $('.move-out-right').removeClass('move-out-right').removeClass('slides-visible');
+         });
+         // ảnh tiếp theo di chuyển từ bên trái vào bên phải
+         $('.slides-img:nth-child('+(locationClick)+')').addClass('slides-visible').addClass('slides-visible').addClass('move-into-right').one('animationend', function (event) {
+            $('.move-into-right').removeClass('move-into-right');
+         });
+      }
    });
    
 
