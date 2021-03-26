@@ -1,0 +1,11 @@
+.breadcrumb li{
+    font-size: 18px;
+}
+
+.breadcrumb li a{
+    color: #666;
+}
+
+.breadcrumb-item::before{
+    margin: 0 10px;
+}

@@ -112,7 +112,7 @@
 }
 
 /* nav */
-.nav-container {
+.header-nav {
     background-color: #FF9300;
     height: 40px;
     padding: 0 10px;
@@ -294,169 +294,44 @@
 /* slide */
 
 .slides{
-    position: relative;
-    height: 554px;
-    overflow: hidden;
+    width: 100%;
+    
 }
 
 
 
 .slides-show{
-    width: 100%;
-    height: 554px;
+    width: 780px;
     overflow: hidden;
-    transition: 1s;
+    position: relative;
 }
 
-
-.slides-img{
+.btn-slides{
+    font-size: 40px;
     position: absolute;
-    top:0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    
-}
-
-
-.slides-show .slides-visible{
-    opacity: 1 ;
-    visibility: visible;
-    transition: 0.5s;
+    top: 50%;
+    z-index: 5;
 }
 
 .slides-img a img{
-    /* width: 1179; */
     width: 100%;
-    
+    height: 410px;
 }
 
-.slides-button{
-    z-index: 5;
-    font-size: 60px;
+.slides-banner{
+    width: 400px;
+    flex-direction: column;
+    margin-left: 5px;
 }
 
-/* button next, prev */
-.btn-slides{
-    display: block;
-    position: absolute;
-    top: 41%;
-    background-color: rgba(0,0,0,0.6);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    opacity: 0.6;
-    cursor: pointer;
-    line-height:100px;
-    z-index: 10;
-}
 
-.slides-button #button-next{
-    right: 10px;
-}
-
-.slides-button #button-prev{
-    left: 10px;
-}
-
-.slides:hover .slides-button{
-    display: block;
-}
-
-#button-next:hover,
-#button-prev:hover{
-    color: #fff;
-    opacity: 0.8;
-}
-
-/* button của location */
-
-
-.move-out-left{
-    animation: move-out-left   0.5s forwards;
-    
-}
-.move-into-left{
-    animation: move-into-left  0.5s forwards;
-}
-
-.move-out-right{
-    animation: move-out-right  0.5s forwards;
-}
-
-.move-into-right{
-    animation: move-into-right 0.5s forwards;
-}
-
-.slides-location{
-    position: absolute;
-    z-index: 11;
-    width: 100px;
-    bottom:5%;
-    left:50%;
-    transform: translateX(-50%);
-    display:flex;
-    justify-content: space-between;
-}
-
-.slides-location button{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.5 ;
-    transition: 0.5s;
-    border: 2px solid #40D3DC;
-    outline: none;
-    cursor: pointer;
-}
-
-.slides-location button.location-active{
-    opacity: 1;
-    background-color:#40D3DC;
-}
-
-/* animation slides */
-@keyframes move-out-left{
-    from{
-       transform: translateX(0%);
-    }
-    to{
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes move-into-left{
-    from{
-        transform: translateX(100%);
-    }
-    to{
-        transform: translateX(0%);
-    }
-}
-
-@keyframes move-out-right{
-    from{
-        transform: translateX(0%);
-    }
-    to{
-        transform: translateX(100%);
-    }
-}
-
-@keyframes move-into-right{
-    from{
-        transform: translateX(-100%);
-    }
-    to{
-        transform: translateX(0%);
-    }
+.banner-video{
+    margin-bottom: 5px;
 }
 
 /* Begin: Product */
 .container-product {
-    margin-top: 40px !important;
+    margin-top: 25px !important;
 }
 
 .product-nav {
@@ -546,7 +421,11 @@
     overflow: hidden;
     display: block;
     padding-bottom: 235px;
-    margin: 30px auto 0 auto;
+    margin: auto auto auto auto;
+}
+
+.product-banner a{
+    padding-bottom: 405px;
 }
 
 .product-item .item-img a img {
@@ -559,6 +438,7 @@
     top: 0;
     right: 0;
     bottom: 0;
+    right: 0;
     margin: auto;
     transition: 0.4s linear;
     transform: scale(1);
