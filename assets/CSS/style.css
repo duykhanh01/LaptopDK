@@ -630,3 +630,30 @@
     text-align: center;
     padding: 2px 0;
 }
+
+/* back to top */
+#to-top{
+    position: fixed;
+    color: #FF9300;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    background-color: #fff;
+    text-align: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    font-size: 18px;
+    bottom: 200px;
+    border: 3px solid #40D3DC;
+    border-radius: 50%;
+    cursor: pointer;
+    outline:none;
+    animation-timing-function: linear;
+}
+
+#to-top:hover{
+    background-color:  #40D3DC;
+    color: #000;
+}

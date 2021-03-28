@@ -1,17 +1,15 @@
 $(document).ready(function () {
-    var owl = $('.slides-show');
-    owl.owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true
+    // button back to top
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('#to-top').fadeIn();
+        }
+        else {
+            $('#to-top').fadeOut();
+        }
+    })
+
+    $('#to-top').click(function (e) { 
+        $('html, body').animate({scrollTop: 0}, 1000)
     });
-    $('.play').on('click', function () {
-        owl.trigger('play.owl.autoplay', [1000])
-    })
-    $('.stop').on('click', function () {
-        owl.trigger('stop.owl.autoplay')
-    })
 });

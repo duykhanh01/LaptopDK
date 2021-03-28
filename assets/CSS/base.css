@@ -18,9 +18,7 @@ html{
 body{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-
 }
-
 
 
 .full-width{
@@ -53,9 +51,18 @@ a:hover{
     color: #333333 ;
 }
 
+.font-11{
+    font-size: 11px;
+}
+
+.font-13{
+    font-size: 13px;
+}
+
 .font-14{
     font-size: 14px !important;
 }
+
 
 .font-16{
     font-size: 16px !important;
@@ -70,7 +77,11 @@ a:hover{
 }
 
 .font-bold{
-    font-weight: 600;
+    font-weight: 500;
+}
+
+.font-italic{
+    font-style: italic;
 }
 
 .text-uppercase{
@@ -117,3 +128,11 @@ ul{
     background-color: #ED3636;
 }
 
+.background-white{
+    background-color: #fff !important;
+}
+
+.format{
+    margin: 0;
+    padding: 0;
+}
