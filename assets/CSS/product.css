@@ -33,19 +33,26 @@
     text-align: center;
 }
 
+.grid-info{
+    display: grid;
+    grid-template-columns:32% 34% 30%;
+    column-gap: 2%;
+    margin-top: 10px;
+}
+
 .info-img .img-main {
-    padding: 10px 15px;
+    padding: 10px 10px;
 }
 
 .info-img .img-main img{
-    width: 330px;
-    height:275px;
+    max-width: 330px;
+    max-height:275px;
 }
 
 .info-img .img-list{
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    /* justify-content:center; */
     align-items: center;
     text-align: center;
 }
@@ -113,11 +120,13 @@
     margin-right: 10px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 .configuration-list .price{
     color: #EF1200;
     font-size: 17px;
+    cursor: pointer;
 }
 
 .configuration-list li.active::before{
@@ -159,7 +168,7 @@
 
 .gift-list{
     padding-top: 30px;
-    padding-left: 10px;
+    padding-left: 22px;
     font-size: 14px;
 }
 
@@ -256,12 +265,11 @@
 /* phần giới thiệu */
 .product-introduction{
     margin-top: 20px;
-    background-color: #fff;
+    display: grid;
+    grid-template-columns: 72% 26%;
+    column-gap: 2%;
 }
 
-.introduction-wrapper{
-    margin-right: -7.5px;
-}
 
 .introduction-tittle{
     border-bottom: 1px solid #ccc;
@@ -270,6 +278,7 @@
 
 .introduction-tittle span{
     display: inline-block;
+    margin-bottom: -1px;
     padding: 10px 15px;
     border-bottom: 2px solid #FF9300;
     font-size: 16px;
@@ -300,24 +309,12 @@
 
 /* Bảng cấu hình chi tiết */
 
-.configuration-wrapper{
-    margin-left: -7.5px;
-}
 
 .table-parameter {
-    padding: 10px 15px;
+    padding: 0 15px 10px 15px;
     position: relative;
 }
 
-.table-parameter::after{
-    content: "";
-    width: 30rem;
-    height:2.5rem;
-    position: absolute;
-    bottom:-25px;
-    left: -15px;
-    background-color:#f5f5f5
-}
 
 .table-parameter .table-configuration tr td{
     padding: 1.2rem;
@@ -332,10 +329,14 @@
     background-color: #F2F2F2;
 }
 
-
 /* sản phẩm tương tự */
+.configuration-detail{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-row-gap: 25px;
+}
+
 .product-similar .product-list{
-    
     margin: 10px 1px 0 1px;
 }
 
