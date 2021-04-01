@@ -43,10 +43,10 @@
 .info-img .img-main {
     padding: 10px 10px;
 }
-
 .info-img .img-main img{
-    max-width: 330px;
+    width: 330px;
     max-height:275px;
+    transition: 0.5s;
 }
 
 .info-img .img-list{
@@ -59,11 +59,11 @@
 
 .info-img .img-list li{
     width: 30%;
-    height:112.99px;
     border: 1px solid #ccc;
     margin: 5px;
     display: flex;
     box-shadow: 0 0 10px 0 #ccc;
+    cursor: pointer;
 }
 
 .info-img .img-list li a{
@@ -182,7 +182,7 @@
 }
 
 .btn-buy{
-    margin-top: 15px;
+    margin-top: 10px;
     color: #fff;
     line-height: 24px;
     border-radius: 5px;
