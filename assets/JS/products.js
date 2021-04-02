@@ -2,7 +2,7 @@ $(document).ready(function () {
     $('.configuration-list li').click(function (e) {
         $(this).addClass('active').siblings().removeClass('active');
     });
-
+    
 
     // thay đổi ảnh chính
     $('.img-list li > img').click(function (e) {
@@ -24,7 +24,22 @@ $(document).ready(function () {
     $(".img-main a > img").imagezoomsl({
         zoomrange: [3, 3],
         magnifycursor: 'all-scroll',
+        disablewheel:false
     });
 
+    // light box images
+    $('[data-fancybox="gallery"]').fancybox({
+        buttons: [
+            "zoom",
+            "share",
+            "slideShow",
+            "fullScreen",
+            //"download",
+            "thumbs",
+            "close"
+          ],
+          animationEffect: "zoom-in-out" ,
+          transitionEffect: "circular"
+    });
 
 })

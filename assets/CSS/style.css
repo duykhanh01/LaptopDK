@@ -282,23 +282,9 @@
 
 /* begin: slider */
 
-/* .slides-shows{
-    overflow: hidden;
-    margin: 0 auto;
-} */
-
-/* .slides-wrapper{
-    animation: slide 14s ease infinite;
-} */
-
-/* slide */
-
 .slides{
     width: 100%;
-    
 }
-
-
 
 .slides-show{
     width: 780px;
@@ -327,6 +313,60 @@
 
 .banner-video{
     margin-bottom: 5px;
+}
+
+/* slides logos */
+.slides-logos{
+    background-color: #fff;
+    padding: 10px 40px;
+    margin-top: 10px;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.slides-logos .owl-carousel{
+    position: relative;
+}
+
+.slides-logos a{
+    display: block;
+}
+
+.slides-logos a img{
+    width: auto !important;
+    margin: auto;
+    max-width:100%;
+    transition: 0.8s;
+    transform: scale(1);
+}
+
+.slides-logos a img:hover{
+    transform: scale(0.8);
+}
+
+/* custom nav slides logos */
+
+.slides-logos .owl-nav{
+    margin: 0 !important;
+}
+
+.slides-logos .owl-nav button{
+    position: absolute;
+    color: #ccc;
+    top: -18%;
+}
+.slides-logos .owl-nav button span{
+    color: #ccc;
+    font-size: 50px;
+}
+.slides-logos .owl-nav .owl-prev{
+    left: 0;
+}
+
+.slides-logos .owl-nav .owl-next{
+    right: 0;
 }
 
 /* Begin: Product */
