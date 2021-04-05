@@ -16,7 +16,7 @@ $(document).ready(function () {
         owl.trigger('stop.owl.autoplay')
     })
 
-    $('.slides-logos').owlCarousel({
+    $('.slide-logos').owlCarousel({
         loop:true,
         dots: false,
         margin:10,
