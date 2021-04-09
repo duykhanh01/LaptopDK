@@ -1,0 +1,40 @@
+.container .breadcrumb{
+    padding-top: 10px;
+}
+
+.breadcrumb li{
+    font-size: 16px;
+}
+
+.breadcrumb li a{
+    color: #666;
+}
+
+.breadcrumb-item::before{
+    margin: 0 10px;
+}
+
+.filter-nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    font-size: 14px;
+}
+
+.filter-item .content{
+    margin-right: 30px;
+    padding: 15px 0;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.filter-list{
+    width: 200px;
+    background-color: #fff;
+    box-shadow:  0 0 5px 0 #969696;
+    padding: 15px 15px;
+}
+
+.filter-list li{
+    padding-bottom: 8px;
+}

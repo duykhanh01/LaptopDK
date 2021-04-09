@@ -1,6 +1,35 @@
 
+.heaer-cart{
+    position: relative;
+}
+
+.header-cart .content-section {
+    position: absolute;
+    width: 700px;
+    top: 100px;
+    right: 0;
+    z-index: 20;
+    background-color: #fff;
+    padding-top: 10px;
+    box-shadow: 0 0 10px 0 #ccc;
+    border: 1px solid #5f9cdd;
+}
+
+.content-section .nav-tabs{
+    border-bottom: 1px solid #ea5f46;
+}
+
+.content-section .nav-tabs .nav-item button{
+    color: #EE4D2D;
+    padding: 0.75rem 5rem;
+}
+
+.content-section .nav-tabs .nav-link.active{
+    border-color: #ea5f46 #ea5f46 #fff #ea5f46;
+}
+
 .cart-header{
-    font-size: 20px;
+    font-size: 8px;
     font-weight: bold;
     padding-top: 20px;
     padding-bottom: 30px;
@@ -8,14 +37,19 @@
 
 .cart-row{
     display: flex;
+    margin: 0 20px;
+}
+
+.cart-row .cart-header{
+    color:#FF9300
 }
 
 .cart-column{
     display: flex;
     align-items: center;
     border-bottom: 1px solid black;
-    margin-right: 28px;
     font-size: 16px;
+    margin-right: 28px;
     padding-bottom: 15px;
     margin-top: 15px;
     color: #333;
@@ -26,11 +60,12 @@
 }
 
 .cart-item-image{
-    width: 150px;
+    width: 100px;
     height:auto;
 }
 
 .cart-item-title{
+    font-size: 12px;
     padding-left: 10px;
 }
 
@@ -42,11 +77,12 @@
     width: 35%;
 }
 
-.btn-danger {
+.cart-items .cart-row .btn-danger {
     color: white;
+    font-size: 15px;
     background-color: #EB5757;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: bold;
 }
 
@@ -63,7 +99,7 @@
     color: #333;
     padding: 0;
     text-align: center;
-    margin-right: 25px;
+    margin-right: 35px;
 }
 
 .cart-row:last-child {
@@ -92,16 +128,13 @@
     font-size: 16px;
 }
 
-.container .btn-purchase {
+.container .btn-cart {
     display: block;
-    margin: 40px auto 80px auto;
+    margin: 20px auto 40px auto;
     font-size: 22px ;
-}
-
-.container .btn-primary {
     color: white;
-    background-color: #56CCF2 ;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: bold;
 }
+

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="assets/CSS/base.css">
     <link rel="stylesheet" href="assets/CSS/style.css">
-    <link rel="stylesheet" href="assets/CSS/cart.css">
+    <link rel="stylesheet" href="assets/CSS/list-products.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-free-5.15.2-web/css/all.min.css">
     <link rel="stylesheet" href="assets/CSS/css-bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/lb/owlcarousel/assets/owl.carousel.min.css">
@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="header-start">
                     <div class="header-logo">
-                        <a href="index.html"><img class="logo-img" src="assets/imgs/logo/logo_laptopaz.jpg" alt="#"></a>
+                        <a href="#"><img class="logo-img" src="assets/imgs/logo/logo_laptopaz.jpg" alt="#"></a>
                     </div>
                     <div class="header-search">
                         <input type="text" class="search-input border-rd" placeholder="Bạn muốn tìm kiếm sản phẩm nào?">
@@ -289,42 +289,236 @@
         <!-- begin main-container -->
         <div id="main-container">
             <div class="container">
-                <section class="content-section">
-                    <div class="cart-row">
-                        <span class="cart-item cart-header cart-column">Tên sản phẩm</span>
-                        <span class="cart-price cart-header cart-column">Giá</span>
-                        <span class="cart-quantity cart-header cart-column">Số lượng</span>
-                    </div>
-                    <div class="cart-items">
-                        <div class="cart-row">
-                            <div class="cart-item cart-column">
-                                <img class="cart-item-image" src="assets/imgs/nitro-5/img7.jpg" width="100" height="100">
-                                <span class="cart-item-title">[Mới 100%] New Outlet ACER NITRO 5 2020 CORE i5-10300H, 8GB, 256GB, VGA 4GB GTX 1650, 15.6 FHD IPS</span>
+                <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="#">Laptop Gaming</a></li>
+                    </ol>
+                </nav>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="slides d-flex">
+                        <div class="owl-carousel owl-theme slides-show">
+                            <div class="item slides-img">
+                                <a href="#" class="img-wrapper">
+                                    <img src="assets/imgs/slider/helios.jpg" alt="#">
+                                </a>
                             </div>
-                            <span class="cart-price cart-column">17.890.000Đ</span>
-                            <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="1">
-                                <button class="btn btn-danger" type="button">REMOVE</button>
+                            <div class="item slides-img">
+                                <a href="#" class="img-wrapper">
+                                    <img src="./assets/imgs/slider/slider_nitro5.jpg" alt="#">
+                                </a>
+                            </div>
+                            <div class="item slides-img">
+                                <a href="#" class="img-wrapper">
+                                    <img src="./assets/imgs/slider/slider_leigon.jpg" alt="#">
+                                </a>
                             </div>
                         </div>
-                        <!-- <div class="cart-row">
-                            <div class="cart-item cart-column">
-                                <img class="cart-item-image" src="Images/Album 3.png" width="100" height="100">
-                                <span class="cart-item-title">Album 3</span>
+                        <div class="slides-banner d-flex">
+                            <div class="banner-video">
+                                <iframe width="395" height="201" src="https://www.youtube.com/embed/kMGVyZlru2s"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
                             </div>
-                            <span class="cart-price cart-column">2.000.000Đ</span>
-                            <div class="cart-quantity cart-column">
-                                <input class="cart-quantity-input" type="number" value="1">
-                                <button class="btn btn-danger" type="button">REMOVE</button>
+                            <div class="banner-img">
+                                <a href="#"><img width="395px" height="201px" src="assets/imgs/banner/feedback.png"
+                                        alt=""></a>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
-                    <div class="cart-total">
-                        <strong class="cart-total-title">Total</strong>
-                        <span class="cart-total-price">17.890.000Đ</span>
+                </div>
+            </div>
+            <div class="container">
+                <div class="slide-logos owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/imgs/banner/lg.png" alt="lg">
+                        </a>
                     </div>
-                    <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-                </section>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/imgs/banner/asus.png" alt="lg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/imgs/banner/dell.png" alt="lg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/imgs/banner/acer.png" alt="lg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/imgs/banner/macbook.png" alt="lg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/imgs/banner/msi.png" alt="lg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/imgs/banner/lenovo.png" alt="lg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="assets/imgs/banner/thinkpad.png" alt="lg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container"> 
+                <div class="filter-nav">
+                    <div class="filter-item">
+                        <span class="content">
+                            Thương hiệu
+                            <i class="ps-2 fas fa-sort-down"></i>
+                        </span>
+                        <ul class="filter-list">
+                            <li>Laptop Acer</li>
+                            <li>Laptop Asus</li>
+                            <li>Laptop Dell</li>
+                            <li>Laptop HP</li>
+                            <li>Laptop Lenovo</li>
+                            <li>Laptop MSI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- begin: Laptop mới -->
+                <div class="row">
+                    <div class="container-product">
+                        <div class="product-list d-flex">
+                            <div class="col-xl-3 col-lg-3">
+                                <div class="product-item">
+                                    <div class="item-img">
+                                        <a href="product.html" class="">
+                                            <img class="item-img"
+                                                src="assets/imgs/product/Laptop_new/nitro5_2020_new.png" alt="nitro5">
+                                        </a>
+                                    </div>
+                                    <div class="item-info">
+                                        <a href="#" class="item-name text-color">
+                                            [Mới 100%] New Outlet ACER NITRO 5 2020 CORE i5-10300H, 8GB, 256GB, VGA 4GB
+                                            GTX
+                                            1650, 15.6 FHD IPS
+                                        </a>
+                                        <div class="item-price">
+                                            <span class="price-pre">
+                                                17.890.000đ
+                                            </span>
+                                            <span class="price-old">
+                                                19.890.000đ
+                                            </span>
+                                        </div>
+                                        <div class="item-sales">
+                                            <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
+                                            <span class="sale-off">-10%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3">
+                                <div class="product-item">
+                                    <div class="item-img">
+                                        <a href="#" class="">
+                                            <img class="item-img" src="assets/imgs/product/Laptop_new/leigon5_new.png"
+                                                alt="leigon 5">
+                                        </a>
+                                    </div>
+                                    <div class="item-info">
+                                        <a href="#" class="item-name text-color">
+                                            [Mới 100%] Lenovo Legion 5 15ARH05 Ryzen 7 - 4800H, 16GB, 256GB, GTX 1660Ti,
+                                            15.6 FHD 144Hz
+                                        </a>
+                                        <div class="item-price">
+                                            <span class="price-pre">
+                                                27.990.000đ
+                                            </span>
+                                            <span class="price-old">
+                                                29.990.000 đ
+                                            </span>
+                                        </div>
+                                        <div class="item-sales">
+                                            <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
+                                            <span class="sale-off">-7%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3">
+                                <div class="product-item">
+                                    <div class="item-img">
+                                        <a href="#" class="">
+                                            <img class="item-img" src="assets/imgs/product/Laptop_new/rog_new.png"
+                                                alt="rog g14">
+                                        </a>
+                                    </div>
+                                    <div class="item-info">
+                                        <a href="#" class="item-name text-color">
+                                            [Mới 100%] ASUS ROG ZEPHYRUS G14 GA401IH-BR7N2BL (Ryzen 7-4800HS, 8GB,
+                                            512GB,
+                                            GTX 1650, 14 FHD IPS 60Hz)
+                                        </a>
+                                        <div class="item-price">
+                                            <span class="price-pre">
+                                                26.890.000đ
+                                            </span>
+                                            <span class="price-old">
+                                                28.890.000đ
+                                            </span>
+                                        </div>
+                                        <div class="item-sales">
+                                            <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
+                                            <span class="sale-off">-7%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3">
+                                <div class="product-item">
+                                    <div class="item-img">
+                                        <a href="#" class="">
+                                            <img class="item-img" src="assets/imgs/product/Laptop_new/zenbook_new.png"
+                                                alt="zenbook 14">
+                                        </a>
+                                    </div>
+                                    <div class="item-info">
+                                        <a href="#" class="item-name text-color">
+                                            [Mới 100%] Asus Zenbook 14 Q407IQ (Ryzen 5 - 4500U, 8GB, 256B, VGA NVIDIA
+                                            MX350,
+                                            14.0 FHD)
+                                        </a>
+                                        <div class="item-price">
+                                            <span class="price-pre">
+                                                18.690.000đ
+                                            </span>
+                                            <span class="price-old">
+                                                19.890.000đ
+                                            </span>
+                                        </div>
+                                        <div class="item-sales">
+                                            <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
+                                            <span class="sale-off">-6%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 

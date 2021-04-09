@@ -88,19 +88,19 @@
     color: #212529;
 }
 
-/* carts */
-.header-carts {
+/* cart */
+.header-cart {
     position: relative;
     text-align: center;
 }
 
-.carts-icon {
+.cart-icon {
     color: #ec1c24;
     font-size: 20px;
     margin-bottom: 8px;
 }
 
-.carts-number {
+.cart-number {
     position: absolute;
     right: 3px;
     top: -5px;
