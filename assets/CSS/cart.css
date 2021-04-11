@@ -1,5 +1,5 @@
 
-.heaer-cart{
+/* .heaer-cart{
     position: relative;
 }
 
@@ -13,7 +13,33 @@
     padding-top: 10px;
     box-shadow: 0 0 10px 0 #ccc;
     border: 1px solid #5f9cdd;
+} */
+#modal{
+    position:fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    align-items: baseline;
 }
+
+#modal .content-section{
+    max-width: 800px;
+    margin: 100px auto 100px auto;
+    background-color: #fff;
+    padding-top: 10px;
+    box-shadow: 0 0 10px 0 #ccc;
+    border: 1px solid #5f9cdd;
+}
+
+
 
 .content-section .nav-tabs{
     border-bottom: 1px solid #ea5f46;
@@ -65,7 +91,7 @@
 }
 
 .cart-item-title{
-    font-size: 12px;
+    font-size: 14px;
     padding-left: 10px;
 }
 
@@ -112,8 +138,8 @@
 
 .cart-total {
     text-align: end;
-    margin-top: 10px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 
 .cart-total-title {
@@ -128,7 +154,7 @@
     font-size: 16px;
 }
 
-.container .btn-cart {
+#modal .btn-cart {
     display: block;
     margin: 20px auto 40px auto;
     font-size: 22px ;
@@ -138,3 +164,102 @@
     font-weight: bold;
 }
 
+/* phần thông tin khách hàng */
+
+.cart-form{
+    padding: 10px 24px
+}
+
+.cart-title{
+    font-size: 18px;
+    font-weight:bold;
+}
+
+.cart-form .form-vocative{
+    padding: 15px 0;
+}
+
+.cart-form .form-vocative .radio{
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.cart-form .form-vocative input{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.cart-form .form-vocative label{
+    font-size: 16px;
+}
+
+.cart-form .form-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cart-form .form-info .box-input{
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+}
+
+.cart-form .form-info .box-input .title{
+    display: block;
+    margin-bottom: 5px;
+    font-size:16px;
+    font-weight:500;
+
+}
+
+.cart-form .form-info .box-input input{
+    height:40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.cart-form .form-info .box-input input:focus,
+.cart-form .form-info .box-input input:valid{
+    border-color: #9b59b6;
+}
+
+.cart-form .cart-note{
+    padding: 5px 8px;
+    font-size: 16px;
+    width: 100%;
+    height:60px
+}
+
+/* phần hình thức thanh toán */
+.cart-form .cart-pay .radio{
+    margin-bottom: 8px;
+}
+
+.cart-form .radio label{
+    cursor: pointer;
+}
+
+.radio input:checked+label{
+    font-weight: 500;
+    color: #9b59b6;
+}
+
+.have-items{
+    display: none;
+}
+
+.no-item{
+    font-size: 18px;
+    text-align: center;
+    padding: 20px 20px;
+    display: none;
+}
+
+.cart-active{
+    display: block;
+}

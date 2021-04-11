@@ -15,11 +15,12 @@ $(document).ready(function () {
     });
 
     // cart
-    var removeCartItemButtons = $('.btn-danger');
+    var removeCartItemButtons = $('.btn-remove');
     for (var i = 0; i < removeCartItemButtons.length; i++) {
         var button = removeCartItemButtons[i];
         $(button).click(removeCartItem);
     }
+
     var quantityInputs = $('.cart-quantity-input');
     for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i];
@@ -32,13 +33,11 @@ $(document).ready(function () {
         $(button).click(addToCartClicked);
     }
 
-
-
-
     function removeCartItem(event) {
         var buttonClicked = event.target;
         $(buttonClicked).parent().parent().remove();
         updateCartTotal();
+        checkItem();
     }
 
     function quantityChanged(event) {
@@ -82,7 +81,7 @@ $(document).ready(function () {
         <span class="cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
             <input class="cart-quantity-input" type="number" value="1">
-            <button class="btn btn-danger" type="button">REMOVE</button>
+            <button class="btn btn-danger btn-remove" type="button">REMOVE</button>
         </div>`
         cartRow.innerHTML = cartRowContens;
         cartItems.append(cartRow);
@@ -115,8 +114,34 @@ $(document).ready(function () {
         // ?!\d một khẳng định phủ định để đảm bảo rằng điểm đó chỉ có đúng bội số của 3 chữ số. Biểu thức thay thế đặt dấu chấm ở đó. 
     }
 
+    $('.btn-purchase').click(purchaseClicked);
+    function purchaseClicked(){
+        alert('Đặt hàng thành công');
+        var cartItems = document.getElementsByClassName('cart-items')[0];
+        while(cartItems.hasChildNodes()){
+            cartItems.removeChild(cartItems.firstChild);
+        }
+        checkItem();
+        updateCartTotal();
+    }
+
+    function checkItem(){
+        var cartItems = $('.cart-items');
+        var noCart = $('.no-item');
+        var cart = $('.have-items')
+        if(cartItems.children().length>0){
+            $(noCart).removeClass('cart-active');
+            $(cart).addClass('cart-active');
+        }
+        else{
+            $(noCart).addClass('cart-active');
+            $(cart).removeClass('cart-active');
+        }
+    }
+    checkItem();
+
+    // xử lý nút next và prev ở cart
     $('.btn-cart-next').click(function () {
-      
         $('.nav-link.active').parent().next('li').find('button').trigger('click');
     });
     $('.btn-cart-prev').click(function () {
