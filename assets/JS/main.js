@@ -60,6 +60,8 @@ $(document).ready(function () {
         // var price = $('shopItem, .info-price').text();
         // var imgSrc = $('shopItem, .img-main a .img-src').attr('src');
         addItemToCart(title, price, imgSrc);
+        updateCartTotal();
+        checkItem();
     }
 
     function addItemToCart(title, price, imgSrc) {
@@ -85,9 +87,9 @@ $(document).ready(function () {
         </div>`
         cartRow.innerHTML = cartRowContens;
         cartItems.append(cartRow);
-        updateCartTotal();
         cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem);
         cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+        
     }
 
     function updateCartTotal() {
@@ -147,4 +149,30 @@ $(document).ready(function () {
     $('.btn-cart-prev').click(function () {
         $('.nav-link.active').parent().prev('li').find('button').trigger('click');
     });
+
+    // xử lý ẩn hiện modal 
+
+    var modalBtn = $('.header-cart');
+    var modal = $('#modal');
+    var modal1 = document.getElementsByClassName('modal')
+    var btnClose = $('.btn-close');
+
+    $(modalBtn).click(function() {
+        $(modal).addClass(' modal-active');
+    })
+
+    $(btnClose).click(function() {
+        $(modal).removeClass('modal-active');
+    })
+
+    $(window).click(function(e) {
+        outsideClick(e);
+    })
+
+    function outsideClick(e) {
+        var target = $(e.target);
+        if(target.is('#modal')) {
+            $(modal).removeClass('modal-active');
+        }
+    }
 });

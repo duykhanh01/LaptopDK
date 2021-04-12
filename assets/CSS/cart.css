@@ -28,6 +28,18 @@
     overflow-x: hidden;
     overflow-y: auto;
     align-items: baseline;
+    
+}
+
+.modal{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.modal-active{
+    opacity: 1;
+    visibility: visible;
 }
 
 #modal .content-section{
@@ -262,4 +274,16 @@
 
 .cart-active{
     display: block;
+}
+
+.nav-tabs{
+    position: relative;
+}
+
+.btn-close{
+    position: absolute;
+    right: 15px;
+    top: 2px;
+    font-size:16px;
+
 }
