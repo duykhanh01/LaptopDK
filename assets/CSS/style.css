@@ -92,6 +92,11 @@
 .header-cart {
     position: relative;
     text-align: center;
+    cursor: pointer;
+}
+
+.header-cart:hover a{
+    color: #ff9300;
 }
 
 .cart-icon {
@@ -589,7 +594,44 @@
     font-size: 14px;
 }
 
+.btn-add{
+    font-size: 14px;
+    background-color: #a3d028;
+    border-top: 2px solid #f7f7f7;
+    border-left: 2px solid #f7f7f7;
+    padding: 2px;
+    width: 45%;
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    bottom: 0;
+    margin: 0;
+    z-index: 0;
+    cursor: pointer;
+    transform: translate(100%,0);
+    transition: all 0.5s ease;
+}
 
+.product-item:hover .btn-add{
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.btn-add .btn-add-item{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+    background: #a3d028;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 7px 10px;
+}
+
+.btn-add .btn-add-item i{
+    font-size: 18px;
+    margin-right: 8px;
+}
 
 /* footer */
 .footer-container {

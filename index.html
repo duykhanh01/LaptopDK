@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="assets/CSS/base.css">
     <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="assets/CSS/cart.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome-free-5.15.2-web/css/all.min.css">
     <link rel="stylesheet" href="assets/CSS/css-bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="assets/lb/owlcarousel/assets/owl.carousel.min.css">
@@ -18,13 +19,14 @@
     <script src="assets/JS/jquery-3.6.0.min.js"></script>
     <script src="assets/JS/main.js"></script>
     <script src="assets/JS/slides.js"></script>
+    <script src="assets/bootstrap/bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
     <script src="assets/lb/owlcarousel/owl.carousel.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </head>
 
 <body>
     <div id="main">
-        <!-- begin: header -->
+        <!-- --------------------- begin: header -------------------- -->
         <header id="header">
             <div class="container">
                 <div class="header-start">
@@ -284,8 +286,141 @@
                 </div>
             </div>
         </header>
+        <!-- end: header -->
 
-        <!-- begin main-container -->
+        <!-- ---------------------- begin: modal cart -------------------------------- -->
+        <div id="modal" class="modal">
+            <section class="content-section">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item font-16" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                            type="button" role="tab" aria-controls="home" aria-selected="true">Cart</button>
+                    </li>
+                    <li class="nav-item font-16" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                            type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                    </li>
+                    <button type="button" class="btn-close" aria-label="Close"></button>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="have-items cart-active">
+                            <div class="cart-row">
+                                <span class="cart-item cart-header cart-column mt-0">Tên sản phẩm</span>
+                                <span class="cart-price cart-header cart-column mt-0">Giá</span>
+                                <span class="cart-quantity cart-header cart-column mt-0">Số lượng</span>
+                            </div>
+                            <div class="cart-items">
+                                <!-- <div class="cart-row">
+                                    <div class="cart-item cart-column">
+                                        <img class="cart-item-image" src="assets/imgs/nitro-5/img7.jpg">
+                                        <span class="cart-item-title">[Mới 100%] New Outlet ACER NITRO 5 2020 CORE
+                                            i5-10300H,
+                                            8GB, 256GB, VGA 4GB GTX 1650, 15.6 FHD IPS</span>
+                                    </div>
+                                    <span class="cart-price cart-column">18.890.000Đ</span>
+                                    <div class="cart-quantity cart-column">
+                                        <input class="cart-quantity-input" type="number" value="1">
+                                        <button class="btn btn-danger btn-remove" type="button">REMOVE</button>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="cart-row">
+                                    <div class="cart-item cart-column">
+                                        <img class="cart-item-image" src="Images/Album 3.png" width="100" height="100">
+                                        <span class="cart-item-title">Album 3</span>
+                                    </div>
+                                    <span class="cart-price cart-column">2.000.000Đ</span>
+                                    <div class="cart-quantity cart-column">
+                                        <input class="cart-quantity-input" type="number" value="1">
+                                        <button class="btn btn-danger" type="button">REMOVE</button>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class="cart-total">
+                                <strong class="cart-total-title">Total</strong>
+                                <span class="cart-total-price">17.890.000Đ</span>
+                            </div>
+                            <div class="btns-cart d-flex">
+                                <button id="nxt" class="btn btn-primary btn-cart btn-cart-next" type="button">
+                                    Tiếp theo</button>
+    
+                            </div>
+                        </div>
+                        <div class="no-item">
+                            Bạn hiện không có sản phẩm nào trong giỏ hàng
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="cart-form">
+                            <div class="cart-title">1.Thông tin khác hàng</div>
+                            <div class="form-vocative d-flex">
+                                <div class="radio">
+                                    <input type="radio" id="radio-btn1" name="vocative">
+                                    <label for="radio-btn1">Anh</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="vocative" id="radio-btn2">
+                                    <label for="radio-btn2">Chị</label>
+                                </div>
+                            </div>
+                            <div class="form-info">
+                                <div class="box-input">
+                                    <span class="title">Họ tên</span>
+                                    <input type="text" required placeholder="Nhập họ và tên" class="name">
+                                </div>
+                                <div class="box-input">
+                                    <span class="title">Số điện thoại</span>
+                                    <input type="text" required placeholder="Số điện thoại" class="phone">
+                                </div>
+                                <div class="box-input">
+                                    <span class="title">Email</span>
+                                    <input type="email" required placeholder="Nhập Email" class="email">
+                                </div>
+                                <div class="box-input">
+                                    <span class="title">Địa chỉ</span>
+                                    <input type="text" required placeholder="Nhập địa chỉ" class="address">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-form">
+                            <div class="cart-title pb-3">2.Ghi chú cho đơn hàng</div>
+                            <textarea class="cart-note" placeholder="Ghi chú yêu cầu"></textarea>
+                        </div>
+                        <div class="cart-form">
+                            <div class="cart-title pb-3">
+                                3. Hình thức thanh toán
+                            </div>
+                            <div class="cart-pay font-16">
+                                <div class="radio">
+                                    <input type="radio" id="pay1" name="vocative" checked>
+                                    <label for="pay1">Thanh toán tại cửa hàng</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="vocative" id="pay2">
+                                    <label for="pay2">Thanh toán khi nhận hàng (COD)</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="vocative" id="pay3">
+                                    <label for="pay3">Thanh toán trực tuyến bằng thẻ ATM, IB, QRCode qua Alepay</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="vocative" id="pay4">
+                                    <label for="pay4">Thanh toán trả góp online</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <button id="prv" class="btn btn-primary btn-cart btn-cart-prev" type="button">Quay
+                                lại</button>
+                            <button class="btn btn-danger btn-cart btn-purchase" type="button">Mua hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+
+        <!-- -------------------- begin main-container -------------------- -->
         <div id="main-container">
             <div class="container">
                 <div class="row">
@@ -408,7 +543,7 @@
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="product.html" class="">
-                                            <img class="item-img"
+                                            <img class="item-img-src"
                                                 src="assets/imgs/product/Laptop_new/nitro5_2020_new.png" alt="nitro5">
                                         </a>
                                     </div>
@@ -431,13 +566,20 @@
                                             <span class="sale-off">-10%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_new/leigon5_new.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_new/leigon5_new.png"
                                                 alt="leigon 5">
                                         </a>
                                     </div>
@@ -459,13 +601,19 @@
                                             <span class="sale-off">-7%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_new/rog_new.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_new/rog_new.png"
                                                 alt="rog g14">
                                         </a>
                                     </div>
@@ -488,13 +636,19 @@
                                             <span class="sale-off">-7%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_new/zenbook_new.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_new/zenbook_new.png"
                                                 alt="zenbook 14">
                                         </a>
                                     </div>
@@ -515,6 +669,12 @@
                                         <div class="item-sales">
                                             <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
                                             <span class="sale-off">-6%</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
                                         </div>
                                     </div>
                                 </div>
@@ -568,7 +728,7 @@
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img"
+                                            <img class="item-img-src"
                                                 src="assets/imgs/product/Laptop_gaming/pavilion_new.png" alt="hp">
                                         </a>
                                     </div>
@@ -590,13 +750,19 @@
                                             <span class="sale-off">-9%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_gaming/5577_99.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_gaming/5577_99.png"
                                                 alt="5577">
                                         </a>
                                     </div>
@@ -619,13 +785,19 @@
                                             <span class="sale-off">-11%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img"
+                                            <img class="item-img-src"
                                                 src="assets/imgs/product/Laptop_gaming/nitro2019_99.png" alt="#">
                                         </a>
                                     </div>
@@ -645,6 +817,12 @@
                                         <div class="item-sales">
                                             <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
                                             <span class="sale-off">-11%</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
                                         </div>
                                     </div>
                                 </div>
@@ -699,7 +877,7 @@
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_do_hoa/e6540.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_do_hoa/e6540.png"
                                                 alt="5520">
                                         </a>
                                     </div>
@@ -721,13 +899,19 @@
                                             <span class="sale-off">-5%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img"
+                                            <img class="item-img-src"
                                                 src="assets/imgs/product/Laptop_do_hoa/zbook15_g3_old.png" alt="m4800">
                                         </a>
                                     </div>
@@ -749,13 +933,19 @@
                                             <span class="sale-off">-6%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_do_hoa/7510_old.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_do_hoa/7510_old.png"
                                                 alt="#">
                                         </a>
                                     </div>
@@ -775,6 +965,12 @@
                                         <div class="item-sales">
                                             <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
                                             <span class="sale-off">-5%</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
                                         </div>
                                     </div>
                                 </div>
@@ -829,7 +1025,7 @@
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img"
+                                            <img class="item-img-src"
                                                 src="assets/imgs/product/Laptop_cao_cap/xps-13-7390.png" alt="5520">
                                         </a>
                                     </div>
@@ -852,13 +1048,19 @@
                                             <span class="sale-off">-8%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_cao_cap/xps-9310.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_cao_cap/xps-9310.png"
                                                 alt="m4800">
                                         </a>
                                     </div>
@@ -881,13 +1083,19 @@
                                             <span class="sale-off">-10%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_cao_cap/asus-s431.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_cao_cap/asus-s431.png"
                                                 alt="s431">
                                         </a>
                                     </div>
@@ -908,6 +1116,12 @@
                                         <div class="item-sales">
                                             <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
                                             <span class="sale-off">-5%</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
                                         </div>
                                     </div>
                                 </div>
@@ -961,7 +1175,7 @@
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_van_phong/5440.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_van_phong/5440.png"
                                                 alt="5520">
                                         </a>
                                     </div>
@@ -982,13 +1196,19 @@
                                             <span class="sale-off">-6%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_van_phong/5440.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_van_phong/5440.png"
                                                 alt="5440">
                                         </a>
                                     </div>
@@ -1009,13 +1229,19 @@
                                             <span class="sale-off">-9%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/Laptop_van_phong/6570b.png"
+                                            <img class="item-img-src" src="assets/imgs/product/Laptop_van_phong/6570b.png"
                                                 alt="s431">
                                         </a>
                                     </div>
@@ -1035,6 +1261,12 @@
                                         <div class="item-sales">
                                             <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
                                             <span class="sale-off">-28%</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1071,7 +1303,7 @@
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/phu_kien/m2-500gb-nvme.png"
+                                            <img class="item-img-src" src="assets/imgs/product/phu_kien/m2-500gb-nvme.png"
                                                 alt="Phụ kiện">
                                         </a>
                                     </div>
@@ -1092,13 +1324,19 @@
                                             <span class="sale-off">-10%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/phu_kien/chuột-hp-m100.png"
+                                            <img class="item-img-src" src="assets/imgs/product/phu_kien/chuột-hp-m100.png"
                                                 alt="Phụ kiện">
                                         </a>
                                     </div>
@@ -1119,13 +1357,19 @@
                                             <span class="sale-off">-20%</span>
                                         </div>
                                     </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-3">
                                 <div class="product-item">
                                     <div class="item-img">
                                         <a href="#" class="">
-                                            <img class="item-img" src="assets/imgs/product/phu_kien/ram-4b-ddr4.png"
+                                            <img class="item-img-src" src="assets/imgs/product/phu_kien/ram-4b-ddr4.png"
                                                 alt="Phụ kiện">
                                         </a>
                                     </div>
@@ -1144,6 +1388,12 @@
                                         <div class="item-sales">
                                             <img src="assets/imgs/sales.png" alt="sale" class="sale-img">
                                             <span class="sale-off">-31%</span>
+                                        </div>
+                                    </div>
+                                    <div class="btn-add">
+                                        <div class="btn-add-item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <span>Giỏ hàng</span>
                                         </div>
                                     </div>
                                 </div>

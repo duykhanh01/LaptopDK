@@ -16,25 +16,106 @@
 
 .filter-nav{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     background-color: #fff;
     font-size: 14px;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+
+.filter-item{
+    position: relative;
 }
 
 .filter-item .content{
+    font-size: 14px;
     margin-right: 30px;
     padding: 15px 0;
     display: inline-block;
     cursor: pointer;
+    color: #007bff;
+}
+
+
+.filter-item .content i{
+    vertical-align:2px;
+    font-size: 14px;
+    
 }
 
 .filter-list{
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 200px;
     background-color: #fff;
     box-shadow:  0 0 5px 0 #969696;
-    padding: 15px 15px;
+    padding: 10px 15px;
+    display: none;
+    z-index: 50;
 }
 
-.filter-list li{
-    padding-bottom: 8px;
+.filter-item:hover .filter-list{
+    display: block;
+}
+
+.filter-list li a{
+    display: block;
+    color: #252525;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.filter-list li a::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 0px;
+    height: 2px;
+}
+
+.filter-list li a:hover::after{
+    animation: underlined 0.5s ease;
+    animation-fill-mode: forwards;
+}
+
+.filter-list li a:hover{
+    color: #ff9300;
+}
+
+.filter-sort{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.sort-select{
+    margin: 0 10px;
+}
+
+.view-mode{
+    display: flex;
+    justify-content: center;
+}
+
+.view-mode a i{
+    font-size:20px;
+    margin: 0 5px;
+}
+
+.mode-active{
+    color: #007bff;
+}
+
+.pagination{
+    padding-top: 20px;
+    padding-bottom:0;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
 }
