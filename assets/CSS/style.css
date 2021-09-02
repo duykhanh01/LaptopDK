@@ -140,7 +140,6 @@
 }
 
 .nav-icons {
-    color: f5f5f5;
     font-size: 30px;
     padding-right: 4px;
 }
@@ -166,14 +165,14 @@
     visibility: hidden;
     background-color: #fff;
     position: absolute;
-    top: 45px;
+    top: 50px;
     left: 0;
     z-index: 10;
     /* column-count: 2; */
     display: grid;
     grid-template-columns: 1fr min-content;
     opacity: 0;
-    transition: 0.2s;
+    transition: 0.3s;
     /*  animation: hidden-sub-nav 0.3s forwards; */
 }
 
@@ -297,11 +296,9 @@
     position: relative;
 }
 
-.btn-slides{
-    font-size: 40px;
-    position: absolute;
-    top: 50%;
-    z-index: 5;
+.slides .owl-theme .owl-dots .owl-dot span {
+    width: 10px;
+    height: 10px;
 }
 
 .slides-img a img{

@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // button back to top
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
+        if ($(window).scrollTop() > 200) {
             $('#to-top').fadeIn();
         } else {
             $('#to-top').fadeOut();
@@ -14,7 +14,7 @@ $(document).ready(function () {
         }, 1000)
     });
 
-    // -------------------------------- Cart --------------------------------
+// -------------------------------- Cart --------------------------------
     // remove sản phẩm
     var removeCartItemButtons = $('.btn-remove');
     for (var i = 0; i < removeCartItemButtons.length; i++) {
@@ -64,6 +64,7 @@ $(document).ready(function () {
         var title = shopItem.getElementsByClassName('item-name')[0].innerText;
         var price = shopItem.getElementsByClassName('price-pre')[0].innerText;
         var imgSrc = shopItem.getElementsByClassName('item-img-src')[0].src;
+        
         // var shopItem = $(button).parent().parent().parent().parent();
         // var title = $('abc, .info-name').text();
         // var price = $('shopItem, .info-price').text();
@@ -71,6 +72,7 @@ $(document).ready(function () {
         addItemToCart(title, price, imgSrc);
         updateCartTotal();
         checkItem();
+        alert('Đã thêm sản phẩm vào giỏ hàng!');
         console.log(shopItem)
     }
 
@@ -121,6 +123,7 @@ $(document).ready(function () {
     // hàm thêm các dấu chấm vào giá
     function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        // Biểu thức chính quy
         // \B giữ cho regax k đặt dấu chấm ở đầu chuỗi
         // \d{3} kí tự số xuất hiện 3 lần
         // ?=(\d{3} tìm bất kỳ điểm nào trong chuỗi có bội số 3 chữ số liên tiếp sau nó,
@@ -213,30 +216,10 @@ $(document).ready(function () {
         }
     }
 
-    // ----------------- Thêm button add to cart --------------------------------
-    function addElementBtn() {
-        var element =$('.product-item');
-        var contens = `
-        <div class="btn-add">
-            <div class="btn-add-item">
-                <i class="fas fa-cart-plus"></i>
-                 <span>Giỏ hàng</span>
-             </div>
-         </div>`
-         element.append(contens);
-         $('.btn-add').click(addToCartClicked)
-         }
-        // var elements = document.getElementsByClassName('product-item')[0]
-        // var itemElement = document.createElement('div');
-        // itemElement.classList.add('btn-add');
-        // var contens = `
-        //      <div class="btn-add-item">
-        //          <i class="fas fa-cart-plus"></i>
-        //           <span>Giỏ hàng</span>
-        //       </div> `
-        //   for (var i = 0; i <elements.length; i++){
-        //       elements[i].append(contens);
-        //   }
-
-    //addElementBtn();
+    // Thêm đường dẫn vào các link để hoàn thiện bài tập
+    $('.nav-menu a').attr('href','laptop-gaming.html')
+    $('.sub-nav-list li a').attr('href','laptop-gaming.html');
+    $('.title-content a').attr('href','laptop-gaming.html')
+    $('.product-item .item-info .item-name').attr('href','product.html')
+    $('.product-item .item-img a').attr('href','product.html')
 });

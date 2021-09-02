@@ -157,18 +157,18 @@ $(document).ready(function () {
     }
 
     // click mua hàng
-    $('.btn-purchase').click(purchaseClicked);
-    function purchaseClicked(){
-        alert('Đặt hàng thành công');
-        var cartItems = document.getElementsByClassName('cart-items')[0];
-        while(cartItems.hasChildNodes()){
-            cartItems.removeChild(cartItems.firstChild);
-        }
-        $('.cart-form').parent('div').find('input, textarea').val('');
-        //$('.cart-form').parent('div').find('textarea').val('');
-        checkItem();
-        updateCartTotal();
-    }
+    // $('.btn-purchase').click(purchaseClicked);
+    // function purchaseClicked(){
+    //     alert('Đặt hàng thành công');
+    //     var cartItems = document.getElementsByClassName('cart-items')[0];
+    //     while(cartItems.hasChildNodes()){
+    //         cartItems.removeChild(cartItems.firstChild);
+    //     }
+    //     $('.cart-form').parent('div').find('input, textarea').val('');
+    //     //$('.cart-form').parent('div').find('textarea').val('');
+    //     checkItem();
+    //     updateCartTotal();
+    // }
 
     // kiểm tra xem có sản phầm nào không
     function checkItem(){
@@ -238,6 +238,6 @@ $(document).ready(function () {
         else{
             cartNumber.innerHTML --;
         }
-    }
+    }   
 
 })
